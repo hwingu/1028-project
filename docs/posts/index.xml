@@ -1,0 +1,295 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on hwingu</title>
+        <link>https://hwingu.github.io/1028-project/posts/</link>
+        <description>Recent content in Posts on hwingu</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Wed, 19 Apr 2023 08:11:13 +0100</lastBuildDate>
+        <atom:link href="https://hwingu.github.io/1028-project/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>How to create presentation slides with Stable Diffusion and ControlNet</title>
+            <link>https://hwingu.github.io/1028-project/posts/howtoguide/</link>
+            <pubDate>Wed, 19 Apr 2023 08:11:13 +0100</pubDate>
+            
+            <guid>https://hwingu.github.io/1028-project/posts/howtoguide/</guid>
+            <description>Prerequisites: Install the blank slides (Optionally create create one yourself if you want a different layout) Install blank slide images Stable Diffusion A1111 ControlNet Here are resources for setting up A1111 and installing ControlNet.
+Some things you should know Location of your stable diffusion folder
+This is typically found by copy and pasting this into your folder directory as shown below:
+%userprofile%\\stable-diffusion-webui Inside your stable diffusion folder, there will be a lot of files, folders… Below I will be explaining a few that you need for this guide.</description>
+            <content type="html"><![CDATA[<h2 id="prerequisites">Prerequisites:</h2>
+<ul>
+<li><a href="https://1drv.ms/p/s!App0pCtSTbcBuQyuqVM_MjJNvHTU?e=VrzF1o">Install the blank slides</a> (Optionally create create one yourself if you want a different layout)</li>
+<li><a href="https://1drv.ms/f/s!App0pCtSTbcBuRAHZmb6k8JtdCdu?e=zP66aR">Install blank slide images</a></li>
+<li><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">Stable Diffusion A1111</a></li>
+<li>ControlNet</li>
+</ul>
+<p>Here are resources for <a href="https://www.youtube.com/watch?v=3cvP7yJotUM">setting up A1111</a> and <a href="https://www.reddit.com/r/StableDiffusion/comments/119o71b/a1111_controlnet_extension_explained_like_youre_5/">installing ControlNet</a>.</p>
+<h3 id="some-things-you-should-know">Some things you should know</h3>
+<p><strong>Location of your stable diffusion folder</strong></p>
+<p>This is typically found by copy and pasting this into your folder directory as shown below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ae81ff">%userprofile%\\stable-diffusion-webui</span>
+</span></span></code></pre></div><p><img src="https://lh3.googleusercontent.com/iJSwqDG293E6dGa8XNlsjG-FkdWOMfgPd-dikDVZh92pyUZ1AorF__k-BmLKAuuefI-hI2HynIZnVVm86CXdwt0AU5jBUYVvVmBaf05JEw03nJKr3MWjazbYh5Nx9GxDAA2z_b5YmEd3i21sEpNgql8" alt=""></p>
+<p>Inside your stable diffusion folder, there will be a lot of files, folders… Below I will be explaining a few that you need for this guide.</p>
+<p><img src="https://lh4.googleusercontent.com/LDbA2QzK5Z6g5OkDl57BobR8NP8ZvEGZWCtFb3NorHbOcWNisYAVeSrWP1hxkuEO_-N2PVKUhugh2DDcf43tpBQ5pWBry14gojEJXcRDq9fT4RqD5SW2EZfGqB_w8RQEvyzLOvWBf4_PMVlM9sDbwcQ" alt=""></p>
+<p>webui-user is what you will use to execute the Automatic1111 webui. </p>
+<p>Make sure that your webui-user contains this:</p>
+<pre tabindex="0"><code>@echo off
+
+
+set PYTHON=&#34;C:\\Users\\%userprofile%\\AppData\\Local\\Programs\\Python\\Python310\\python.exe&#34;
+set GIT=
+set VENV\_DIR=
+set COMMANDLINE\_ARGS=
+git pull
+call webui.bat
+</code></pre><blockquote>
+<p>To edit the webui-user file, right click on it (show more options if you’re on windows 11) and click on edit. A notepad should open. Copy and paste the above into the notepad.</p>
+</blockquote>
+<p><img src="https://lh5.googleusercontent.com/Aeei_zRos1m0OnnH7uQSmlzML7y0EAsbxt0_Ia8l_ut5_ff6qNduIg7fAPPYY26FVoQ2rU4IyB07W0baUe6OfgI0YoA_50ecDCpiVGXpc7Sc1EzKvXjwfx8uoXmhmfi45iVzTHDgyXzHH4RiGVYaxGI" alt=""></p>
+<p>The output folder is where all the images you generate are located.</p>
+<p><img src="https://lh6.googleusercontent.com/GOGD6iN8HemE0fI-omchUnGKJrPEZSuT-mh3yTCS8MeAiMooJFrpSa_KbVjEnGp5wE4Gbj2PY-n49_z8jaSfRjIfDzbO-gFtz54-tJb6VSi82uRQO5MgtnyA8j6ByJ7w816CjLpIfjzujdmcPL2g7rE" alt=""></p>
+<p><strong>Extras-images -</strong> contains all images that you have upscaled in the extras tab. </p>
+<p><strong>Img2img -</strong> contains all the images rendered using inpainting and img2img, which we will use later on.</p>
+<p><strong>Txt2img -</strong> contains the standard prompt to image rendered image.</p>
+<p><img src="https://lh3.googleusercontent.com/AZyhY9QuoDVhYOOquG9aTZDyQ8KYKWSHVTqUz_fgE_CQVqaigMRmTy0K0FOLa4n4bUda-3dlylaxU2cADgfIoMYrGMY3o4BW1MZUhdlwXABiFenObs1XKeLUKF1dafX93_sY7x5agUJujhEN_DWSyRI" alt=""></p>
+<p>The <strong>models</strong> folder contains all of the stable diffusion checkpoints, models, upscaler, etc.</p>
+<p><img src="https://lh6.googleusercontent.com/zzfOsy7QBWSvJblvaEeR0agJGbKg5i6NZTDSrzOjexrKPAMdfO27-Pa0DsBviiqrabHq4Ri5R06bLcxMvvfxTjpVRCNwgkLlTm71Am3J8HgKfBKV1cCtWfHdjbpuTK8vTxQG3yiYv5IEbf2AxX9vgzA" alt=""></p>
+<p>The <strong>Stable-diffusion</strong> folder within the models folders will contain all of your checkpoints and where you will put your new checkpoints.</p>
+<p><img src="https://lh3.googleusercontent.com/TrwePpozftMS5pWQIjTQRNxZtacsa9YMm89AtXkPy_LkCD_VjE_0sP73ZJM2-0Ma8cW-MLZ16ieYhPFb0gGPlMtcL4GFegvNuD66JKwqdqTJRWyXkgTz1d1GA9fPz0PAbXyRQ185B538Sw30-WFp5T8" alt=""></p>
+<p><img src="https://lh3.googleusercontent.com/r_nkAtoqDPUnQr9mnqTF_sJJSW8TRT4dAdz3-s9m2_PfxZBn3dNThb7Hfit7vlN35QerwgcaOXIeceYM8UiiEWn8_hY3wSXmtjzkgPgzUnLJVNbJqZg1YDRmC_AD8DM6kYoXDGG7tjL52rfLcQKQJ2k" alt=""></p>
+<p>Above is the <strong>A1111 WebUI</strong> where you will be doing almost everything.</p>
+<p>There will only be a few settings we are changing in this guide:</p>
+<h3 id="a1111-settings">A1111 Settings</h3>
+<p><strong>Width and height -</strong> The resolution</p>
+<p><strong>Batch count -</strong> How many images are being rendered at once (I like to set this at 4, depends on your gpu)</p>
+<p><strong>Prompt -</strong> Prompt for the image</p>
+<p><strong>Negative prompt -</strong> What you don’t want in your image</p>
+<h3 id="controlnet-settings">ControlNet Settings</h3>
+<p><strong>Preprocessor - <img src="https://lh4.googleusercontent.com/EY27ct2SYS-YUunQCpHzqb-4kERsRGsHPmp_ChKikgFW5K5YWbkzgTzJVKcek1ev7j1VBpDU0SeafDKWfIW6KRNqq46BYuPnCc4pWCvQG7hA9-RfQEpKHMt4eqzcO5XqFBjWEJIno6tkHZ-c1jVIPu4" alt=""><img src="https://lh5.googleusercontent.com/OCuE9TI29R6q65c12bJsVoqOQg0_GlOxHdxf-ZotINCBMDhgbSSPjow9W2r_J88KbMCVd-mLLe6TXvZq2HaE0-1b2SqFk6QyGs2mLSZk3wkVdntZ-HmcWGgA4pNN-ToWWnWGQrGTlBEdeM7HNb33Ut0" alt=""></strong></p>
+<p><strong>Model -</strong> ControlNet’s model</p>
+<h3 id="other-useful-things-to-know">Other useful things to know</h3>
+<p> <strong><img src="https://lh6.googleusercontent.com/gCMVi1QEALGf1YuL6pW1V6hKNZT_MIWie_jfCoADFPqMrryERq2WorFEy_AS0GICL0QhG2n58O2U8fd9RcxFhIUSA1Inabkvwh91ncVN0ULtR4qQb64qZOZA867dAkc_3_bLnvqcxoHOqJYueeL7Gm8" alt=""></strong></p>
+<p>This button located under the ‘Generate’ button allows you to paste prompt and settings from last image generation</p>
+<p><img src="https://lh3.googleusercontent.com/IgUxcOSzyF6wMr6pCMmOcHaFQWWt_kn3U4IAsjgqjrMajngpnIWTm6C81KoL1GqeawAUI7ctEe_Blr2TtfczuO1XOsx5tmHGL2DCWMhmRK5KbfB58ve1P5ZnV9B3D639Sf4WFb-iS1Jbr_doYdMqys8" alt=""></p>
+<p><strong>The folder icon</strong> can also be used to open stable diffusion folder</p>
+<p><strong>Send to ‘ ‘</strong> allows you to send the image rendered to the corresponding places directly.</p>
+<p><img src="https://lh5.googleusercontent.com/80tVxDUMV7gTTWoiWazzTtSL_Li0CC0GgPfSiKXjv0wfAFb7RNBZWp_etMSA7qCW7uSIiumrxq7W46SQAIOHFFWF4izKVQe2AYH0W2DSgu3i1dhZW_4uiyGJ_EOj6a1i-anoH6TsWlhHmObTfQdjfoQ" alt=""></p>
+<p>The PNG info is extremely useful, if you put an image you rendered with A1111. It gives you all the information about the prompt, negative prompt and settings you used to render the image.</p>
+<h2 id="step-1-creating-the-slide-images">Step 1: Creating the slide images</h2>
+<p>Before you start, you have to make a prompt or find some ‘inspirations’. Here are some websites for finding amazing prompts.</p>
+<blockquote>
+<p>Even if you are planning on making your own prompt, I do recommend looking through these websites to get an idea on how people make good prompts.</p>
+</blockquote>
+<ul>
+<li><a href="https://lexica.art/">Lexica.art</a></li>
+<li><a href="https://civit.ai/">Civit.ai</a></li>
+<li><a href="https://www.reddit.com/r/StableDiffusion/">Stable Diffusion subreddit</a></li>
+</ul>
+<blockquote>
+<p>Once you find an image that you like, copy and paste and add ‘presentation slide template’ at the front of the prompt. For example, “<strong>presentation slide template</strong>, Vintage seamless pen traced print, minimalist flowers and foliage wallpaper risograph pattern white and neutral colors, greenish background, aesthetic, high quality”</p>
+</blockquote>
+<p>Also, it is good to have a negative prompt to avoid things you do not want on your slide. To give you some ideas, I normally use:</p>
+<pre tabindex="0"><code>people, faces, distorted text, blurry, childish, messy, amateur, grainy, low-res, ugly, deformed, mangled, disproportional
+</code></pre><p>Next, use the image of the blank slide as the ControlNet input and use the settings below.</p>
+<p>To insert the the ControlNet image, in Automatic1111, scroll down until you see <strong>ControlNet</strong>.</p>
+<p><img src="https://lh5.googleusercontent.com/EUrLr0uQ5Ak_pvENJsXLK05-pEw0AkdkRZs2yk5_JtMk03_ToN-xraewXFpWGR_T6LHpu1XycF-gCDkcRBiFlPE2Hh1qYYITS1u8mHS7Hnq8rnOQwmjsOcHVurah6Za-AWlAmd91rvXz2oIZyry2Qs8" alt=""></p>
+<p>Clicking on it should reveal the ControlNet settings.</p>
+<p>Drag your image into the image box like the one below.</p>
+<p><img src="https://lh6.googleusercontent.com/nBtCUAhAP8kC7dbDQ04t6g109zJyhERsZqpt7kEjvrg6vWBX8iOgjVwPr_X6BaV5HnOtypK7sKwamyYQP2xCS5nTzn0ILz2LMNGSmvfN_coYwrqamMycQxgmkGn2VElgfcIq6AoV1Pw2mPEe8TMxs3k" alt=""></p>
+<p>Also in the ControlNet settings, make sure to check <strong>Enable</strong> and set the Preprocessor and model both to canny. Below are the settings used for this step.</p>
+<p><strong>Example Blank slide</strong></p>
+<p><img src="https://lh4.googleusercontent.com/GcsZbszCJ6HxHwW9EcJHdRPcfdv2yCK3FfScXPN7AflavF3NYYN5bzlPr3slDwgDkRORgXoHrRtb0t26IU3svDYnYKmih55T44Cs8zePY9X_GJeAdZhsS9AsIzdMche1bva62nmb83Br0QZQyN987oI" alt=""></p>
+<p><strong><em>Text2img settings</em></strong></p>
+<p><img src="https://lh5.googleusercontent.com/kCdOtiOF0PNa0pQr7Y0maHrTFRSJBxrL1eZnK0y4CaeqX3TGucM8mBZHaff1MfJDsCJRyciLiwgZoRIA0E9J7JCq84QQwNzQlJGx9p_zy9ZeZqyC6o8aTG-0b8PagBqQJM5TNRCHeB1AwJxegikFUf8" alt=""></p>
+<p><strong><em>ControlNet settings</em></strong></p>
+<p><img src="https://lh3.googleusercontent.com/WJTB3xQDwa64uDpHLdhxFb0dvEb8tgtIS6VQEAKW8B1va5aZUpGGBPWlYONOwdtRvI_yEPzvUck90n7fw_t26DjEBQIebLaEEDz_8aom1l6gPpikWiPujN3x_kHY9q_tO03UmCk8riv1CLVfb8kCwD8" alt=""></p>
+<p>Do this step for all the <a href="https://onedrive.live.com/?id=1B74D522BA4749A%217312&amp;cid=01B74D522BA4749A">blank slide images</a> </p>
+<blockquote>
+<p>All the slide images generated at this stage are located in the <strong>txt2img folder</strong>.</p>
+</blockquote>
+<blockquote>
+<p>You can increase the batch count under <strong>text2img settings</strong> if you&rsquo;d like to render more than 1 image at a time.</p>
+</blockquote>
+<h2 id="step-2-removing-foreground">Step 2: Removing foreground</h2>
+<p>If the image has a solid background (background with only 1 colour), use an editing software (e.g. Microsoft Paint) to delete the text. </p>
+<p>If not, follow the steps below:</p>
+<ol>
+<li>Go to inpaint, located under img2img tab</li>
+<li>Use inpainting to cover up anything to remove</li>
+<li>Make sure that denoising strength is set to 0.75 or higher (Basically higher denoising strength, more different from original image). Keep your prompt the exact same as the original for your first attempt at removing the foreground</li>
+</ol>
+<p>The settings should look like this:
+<img src="https://lh5.googleusercontent.com/bf42ki4tiE6K8Nze78WXlUuCG_zNNA2p72Tuxhaas3FmhhdS-saNcMQZpDfoVj2Jdeu6IoEiNmCWnkMrD-yvcwDIwmod0w8DFv5l7IFZsbEBXK-m3F5_CPr_8Aklqzw7tBke9L7aZ2HgjDnRlX93EI4" alt=""></p>
+<ol start="4">
+<li>Repeat for every image</li>
+</ol>
+<h3 id="solution-to-artifacts-not-removing">Solution to artifacts not removing</h3>
+<p>Sometimes, there will be aritifacts on the image that don&rsquo;t go away no matter how many times the process above is done.</p>
+<p>One example of this is with this image:</p>
+<p><img src="https://lh3.googleusercontent.com/-hcZvcSA_wMA8nLaplAs4GzpbUC4rYqByLdcVVjCpSGlxsoHSuDDK14nT0jIQrLIDzAetpUvIqwslAkweKSTp6C7uEo4wNX5wK5FlBrpmhChp6HIzmAKuQjpRFbY6x-8QYjwxFI0Re5zUFBn9wH3M8I" alt=""></p>
+<p>No matter how many times I render the image with the artifact on the top left covered with inpainting, some artifact pops up on the top left.</p>
+<p>The solution to this was changing the prompt to just “starry lights”. Just try to be creative with the prompt, remove your original prompt and start over with a new prompt.</p>
+<p><img src="https://lh6.googleusercontent.com/EaxxJjRhxx4pDg9pmpJYPqf1vmHhW80AzYqp4s1LjwZWq1lUZJ7OmsbEi3Ozj2WHBEU0xgGA0CU_KYRf59xt2wH-4xFu4-Z4vtecnmfgdUTH29D2SQDDnTHnC-1BCoRLJJQq7ErXXzAW-iBd_EI7bbk" alt=""></p>
+<h2 id="step-3-upscaling">Step 3: Upscaling</h2>
+<p>Now it’s time to upscale the background images, you will be able to find the background images under the img2img-images folder under outputs.</p>
+<p>Navigate to img2img and insert your image.</p>
+<p><img src="https://lh3.googleusercontent.com/LbWhnTBjDmqvqpkOMJfweTGvUYyDfZv-0yoD9SgtoCe8MjFpBtjcdB-In78wCLOn3AxH-K_ViqGS_snaqv17boZlSGBt10ueRDiKUmBDe18IJKVoX-HUe9Yz8hevkV2EqiJ45uyVi7mZMBuq0CemkQY" alt=""></p>
+<p>Use the same prompt you used for your first step. Set denoising strength to 0.5 and set height and width to 1152x768 (1.5x 768x512), Go higher or lower depending on your GPU. Image of img2img settings below for reference.</p>
+<p><img src="https://lh3.googleusercontent.com/CjisMF6316zB-n29gWQZkc_c-rDcH-O39R3BSxdfnF0XFxA7ww8iARj0e7_ZnCcT4QRcJHP1WmiKbN8R4F9VQjMHmRfp-FyqXzIHiKDP9fvUUvI5vBOo2C3s7wgwJr9T-NksU9AeU6twraSfw1IEqZ0" alt=""></p>
+<p>For images that are very detailed, you might have to go for a lower denoising strength like 0.45.</p>
+<p>The point of this step is to prevent low resolution artifacts that are very noticeable when the image is upscaled straight away. Img2Img can render the image in a higher resolution first.</p>
+<p>If you like the rendered image, send it to extras.</p>
+<p><img src="https://lh4.googleusercontent.com/AhM6Gr67OmaN4tGOG40K9btUDy72cjnqzF_UWzBUrXvylmP-t8udZN_el5EKM3SDEz5Azl5Dbf7PBOyJ_01DtCF-qpLuGz2kToc4J0kx1rTIzTwxn42OLmehewhd3YyfEw6Buv79QB0YCP1ffcdbWiI" alt=""></p>
+<p><img src="https://lh4.googleusercontent.com/AT8BaI4amWeKvzb7X_KSnG8V6R7HlImOFQAdimv2mAquPu8pMT8WAtcKsy0BSm_hdmEzq4PZI1DY-9GJsoiC1tvyL5nChaz6LjCP3auRrC-I4M5p9eY1GVyM7NdtOGwE-F9ZPFtCTKOo_azTsW0DiDY" alt=""></p>
+<p>The only setting to change here is Upscaler 1. From my experience, 4x-UltraSharp and R-ESRGAN 4x+ both works fine. You may want to upscale the images in a lower resolution, by decreasing the resize, to lower the image size.</p>
+<h2 id="step-4-applying-background-and-style-to-slides">Step 4: Applying background and style to slides</h2>
+<p>Open up the <a href="https://1drv.ms/p/s!App0pCtSTbcBuQyuqVM_MjJNvHTU?e=VrzF1o">slides that I made</a>, or yours if you made one yourself. All you need to do is change the background of each slide to the upscaled background. You can find the upscaled background in the extras folder located in the output folder.</p>
+<p>The layout of the texts and graphs should already be in place.</p>
+<p>To change the background, there’s a format background button in the design tab.</p>
+<p>In <strong>format background</strong>, select <strong>Picture from File</strong></p>
+<h3 id="pie-charts-bar-charts-and-icons">Pie charts, bar charts and icons</h3>
+<p>Powerpoint allows for an in depth customization of data charts such as pie charts and bar charts. Customisations include:</p>
+<ul>
+<li>Colours </li>
+<li>Gradient </li>
+<li>Shadows</li>
+</ul>
+<p>Simply double click on the part of the chart, whether its a pie chart or a bar chart, that you want to customise to bring out the customisation tab</p>
+<p><img src="https://lh3.googleusercontent.com/cILoECELbaJlaIDZaTppxcZwuWkKrT1sYUStDfYNMZE9rgW_RYB_R3-plmxC7jnCq96a08sYYAqQGg5hcubTmW9nFalsHGr6fcJ9cuz2DfQ7HIfbRdSTuMuQRj_0qbNsaEudYjNQJtvNS4hvb7pnpf8" alt=""></p>
+<h3 id="texts-text-colour">Texts/ text colour</h3>
+<p>To further customise it other than colour, right click text and click on ‘Format Shape’ which will allow customisations for shadow, glowing effects, etc. </p>
+<h3 id="fonts">Fonts</h3>
+<p>As for the font, sometimes it generates a new font, sometimes it doesn’t on the original image that you’ve rendered in step 1 because we are using ControlNet.</p>
+<blockquote>
+<p>There’s one way around this though which is inpaint. Just pick an image you rendered on step 1, keep settings all the same and using inpaint brush, cover the texts.</p>
+</blockquote>
+<p>If you lost your prompt and settings, there’s a tab called PNG info in A1111. Put your image in there and it should tell you the prompt and settings used to render the image.</p>
+<p><img src="https://lh4.googleusercontent.com/jbd5z8GbkpsqRSOBwHgCbEXRd2pd4gLvtX64OXTOJ7qal7ce5dOTL9qavwInhrTTcXl-ui773iq20hKWdGl5PIQYgGUNwIkEYSiFGLIvDwPdmZmQx0D9dAoOVh0F6nqqEDE2nQaHaY_ifQ3s6C5tsG4" alt=""></p>
+<p>Once the new font is rendered, you could use <a href="https://www.myfonts.com/pages/whatthefont">WhatTheFont</a> (An font identifying website)</p>
+<p>This method is a bit of a gamble though since most of the fonts there are paid. Sometimes you can search for the font and a free version may come up if you’re lucky.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Creating presentation slides with Stable Diffusion and ControlNet</title>
+            <link>https://hwingu.github.io/1028-project/posts/blogpost/</link>
+            <pubDate>Wed, 19 Apr 2023 07:44:59 +0100</pubDate>
+            
+            <guid>https://hwingu.github.io/1028-project/posts/blogpost/</guid>
+            <description>Goal of the project This project’s goal is to make it easier for anyone to make slides that they want, in any design they want. Essentially it brings customisation to another level because people can start making slide designs if they can describe it and in wayyy less time, so that more time can be spent practising the presentation itself rather than worrying about the design of it.
+Explanation of each step of the process Below will be an explanation of why I did each step, I recommend that you go through the how-to-guide first before reading on.</description>
+            <content type="html"><![CDATA[<h2 id="goal-of-the-project">Goal of the project</h2>
+<p>This project’s goal is to make it easier for anyone to make slides that they want, in any design they want. Essentially it brings customisation to another level because people can start making slide designs if they can describe it and in wayyy less time, so that more time can be spent practising the presentation itself rather than worrying about the design of it.</p>
+<h2 id="explanation-of-each-step-of-the-process">Explanation of each step of the process</h2>
+<p>Below will be an explanation of why I did each step, I recommend that you go through the <a href="http://localhost:1313/1028-site/posts/howtoguide/">how-to-guide</a> first before reading on.</p>
+<h3 id="1--creating-the-prompt-and-generating-images-of-presentation-slides">1.  Creating the prompt and generating images of presentation slides</h3>
+<p><strong>Model:</strong> Deliberate_v2</p>
+<p><strong>Prompt:</strong> presentation slide template, Vintage seamless pen traced print, minimalist flowers and foliage wallpaper risograph pattern white and neutral colors, greenish background, aesthetic, high quality</p>
+<p><strong>Negative prompt:</strong> people, faces, distorted text, blurry, childish, messy, amateur, grainy, low-res, ugly, deformed, mangled, disproportional</p>
+<p><strong>Settings:</strong> Steps: 20, Sampler: Euler a, CFG scale: 7, Seed: 2668747600, Size: 768x512, Model hash: 9aba26abdf, ControlNet-0 Enabled: True, ControlNet-0 Module: canny, ControlNet-0 Model: control_canny-fp16 [e3fe7712], ControlNet-0 Weight: 1, ControlNet-0 Guidance Start: 0, ControlNet-0 Guidance End: 1</p>
+<p>dd</p>
+<p><strong>ControlNet Input:</strong></p>
+<p><img src="https://lh3.googleusercontent.com/jCrF-t2PezTzNIsHaR0hDZaufELKww73KrgOnmhHdAQB0EhvrYgonUJt_g6oBYSnCWGuTv_1BX0eEJ6CqIud0TY-s_2xroBYKmuElsVbDnZJuu-oHM9Xhit4EzxzUaJokOBv7F9K0UnvW2Xw22BiBK4" alt=""></p>
+<p><strong>Explanation of why I used these settings:</strong> </p>
+<p>The model doesn’t really matter using this method, just use any model that you like.</p>
+<p>The prompt is &ldquo;Vintage seamless pen traced print, minimalist flowers and foliage wallpaper risograph pattern white and neutral colors, greenish background, aesthetic, high quality&rdquo;. Stable diffusion tend to generate better looking images when extra prompts such as aesthetic or high quality is added.</p>
+<p>It is a good idea to include the background colors in the prompt. I have found that without the description of the background colours, slides tend to be more inconsistent and varied, which doesn&rsquo;t look that great when all the slides are put together.</p>
+<p>The negative prompt can help with quality, the reason why I have put faces and people first is because when generating these images of slides, especially with the prompt &ldquo;professional&rdquo;. It tends to generate distorted faces of people, which is pretty creepy.</p>
+<p>The prompt I used for the example above was one I copied from <a href="https://lexica.art">lexica.art</a>. I looked around on lexica.art for something that I liked and copied the prompt. <a href="https://www.reddit.com/r/StableDiffusion/">Stable diffusion Subreddit</a> and <a href="https://civitai.com">civit.ai</a> are probably better places to look for prompts though, since people there are more experienced with creating good prompt while lexica.art tends to be filled with images created by random people using the lexica model on their website.</p>
+<p>the resolution is 768x512. The reason why I set it at 768x512 is so that each generation takes less time and memory, meaning that I could render more slides and have more selection of slides. I used to render my slides on 1920x1080, but in my experience, it takes a lot more time to render and takes a lot more memory, leading to memory leaks and crashes of A1111. It&rsquo;s fine to generate the image at a lower resolution at this stage because of the upscaling in the later steps. Also this means we can pump out more images at once.</p>
+<p>As for the ControlNet input images, basically I have created a set of ‘blank presentation slides’ which have a solid white background, basic font and layout. The idea of this is for ControlNet to guide the layout of the slide and render the style of the slide without changing up the layout. One caveat to this approach is that the layout will completely depend on the ‘blank slides’. There will be no variation of layout to the slides rendered, which can be a good or bad thing.</p>
+<p>The rest of the settings are kept default. Some things could be experimented with such as ControlNet&rsquo;s guidance strength and weight.</p>
+<p><strong>Output:</strong></p>
+<p><strong><img src="https://lh4.googleusercontent.com/XC7UN3L0Q-HEZl73IT563hgsRSvFp_PyQAutRhvL1tx-TRwcCM6Q8EcGFR72MmgDFXqT9XfYxgU_Ygzn-5_wNpcPRgUAoKpZ_bz6mSYtcfl5yv2yJdg6u5odMFZNCdM5tOO7M5ph5tBgmcgNPQBnkGI" alt=""></strong></p>
+<blockquote>
+<p>I repeated this step for each blank slide, and I also put them all in a folder for reference later on</p>
+</blockquote>
+<h3 id="2--removing-the-foreground-text-objects-etc">2.  Removing the foreground (text, objects, etc)</h3>
+<p>Before removing the foreground, keep a copy of the original.</p>
+<p><strong>If it’s a solid background (one colour):</strong> Remove the foreground using image editing tools e.g. Microsoft Paint, Photoshop, etc.</p>
+<p><strong>If not:</strong> Bring the image into inpaint <strong>or</strong> Use ClipDrop’s text removal tool.</p>
+<p><strong>Prompt:</strong> presentation slide template, Vintage seamless pen traced print, minimalist flowers and foliage wallpaper risograph pattern white and neutral colors, greenish background, aesthetic, high quality</p>
+<p><strong>Negative prompt:</strong> people, faces, distorted text, blurry, childish, messy, amateur, grainy, low-res, ugly, deformed, mangled, disproportional</p>
+<p>Steps: 20, Sampler: Euler a, CFG scale: 7, Seed: 2102601361, Size: 768x512, Model hash: 9aba26abdf, Denoising strength: 0.75, Mask blur: 4</p>
+<p><strong>Explanation:</strong></p>
+<p>The purpose of this step is just to remove the foreground to get the background which can be applied onto the presentation slide later on.</p>
+<p>One thing to change is the denoising strength (Basically higher denoising strength, more different from original image. The denoising strength should be fairly high as we’re changing the image entirely) Fairly high is around 0.75 or higher.</p>
+<p>And I kept everything else the same.</p>
+<p>There have been cases where I was having trouble removing the foreground. Below is an example:</p>
+<p><img src="https://lh3.googleusercontent.com/DbLUB7FSYYIXPPWSnYwEGUeN7tfN9OczzUO8D2JYkCX9f_yooLmdLUgin6B-TCcBYNJQ7X5ChXU2LSvzcyhDMl6mR6gaVfLA8G0Bb56S7yR_DZxylld1TZ9uRA6hsWtXeptlskBVdhiEotWuJnw3X0A" alt=""></p>
+<p>What I did was delete the prompt completely and changed it to ‘starry lights’ which gave me this:</p>
+<p><img src="https://lh5.googleusercontent.com/Isf_A_Ajn4PolYXQvOeUlMvde9UiLAqwrHwErg-YxrZUjCA3AROz33SZXAcxqWkPY_62S013Xt-sQUoimEnmNaWnylMMNXsyXFQ_Pft4o0loLi2JFGjkUNQpNyxfl2nJwONcLRbuqZfChudalItXIQQ" alt=""></p>
+<h3 id="3--upscaling-the-background">3.  Upscaling the background</h3>
+<p><strong>Send to img2img</strong></p>
+<p><strong>Prompt:</strong> presentation slide template, Vintage seamless pen traced print, minimalist flowers and foliage wallpaper risograph pattern white and neutral colors, greenish background, aesthetic, high quality</p>
+<p><strong>Negative prompt:</strong> people, faces, distorted text, blurry, childish, messy, amateur, grainy, low-res, ugly, deformed, mangled, disproportional</p>
+<p>Steps: 20, Sampler: Euler a, CFG scale: 7, Seed: 68616172, Size: 1152x768, Model hash: 9aba26abdf, Denoising strength: 0.5</p>
+<p><strong>Send to extras</strong></p>
+<p>Postprocess upscale by: 4, Postprocess upscaler: 4x-UltraSharp</p>
+<p><strong>Explanation:</strong></p>
+<p>The reason why I put the image into img2img first rather than putting it to upscale in postprocess-upscale is to render a higher resolution image first. What I found was that if I put a low resolution image into post-process upscale, there will be artefacts and weird out of place shapes around the image that are very noticeable. Upscaling it first in img2img will give the image more detail, which means there will be less artefacts when post-process upscaled.</p>
+<p>The resolution is 1152x768 which is 1.5x the resolution of the original image (728x512). I wanted to go for a 2x resolution but my computer specs wouldn’t allow it and kept crashing. But the results with 1.5x looked just fine.</p>
+<p>The denoising strength is 0.5, it has to be low because the upscaled image has to look similar to the original. I found that 0.4 - 0.5 works fine. Any higher than 0.5 will render an image that looks completely different.</p>
+<p>The post-process upscaler I used is 4x-UltraSharp. <a href="https://upscale.wiki/wiki/Model_Database">https://upscale.wiki/wiki/Model_Database</a> Link to download 4x-UltraSharp. R-ESRGAN 4x+ works fine too.</p>
+<h3 id="4--apply-background-to-presentation-slide">4.  Apply background to presentation slide</h3>
+<p><img src="https://lh5.googleusercontent.com/kxQdvV5VF4h1yeuI-NaiCR1EEKzbp0T0K4Z1c2vRAm6MfcXapW3Wug602hIlygMOAV3ZRC408NkbEvj9Sa2sZe27dFYre6X7qaDLAk5JI9L2S9dks_Xu_-ooMhhs2WbhdkCBJvVNGAvZ7eT_lNdhIu8" alt=""></p>
+<p>I have already created all the slides in my powerpoint, so all I had to do was duplicate the slides and apply the background + customise colours for the charts</p>
+<p><img src="https://lh5.googleusercontent.com/Y7ao8Ee4MlnJcCY_oeAqV_FFxTTMW1gvEdDlsFf9_IsbrNGTRKuMdI5FdoiQ3qD6LMf5xg82Dqo6kFWqtuohQh_zFBNZQ8h2fNKs2xzzWZffYmQEj8e9cOSU8YnCm232KE2DUi_rIuv7-Yu8Z-7Ip1Q" alt=""></p>
+<h2 id="disadvantages-with-the-current-approach">Disadvantages with the current approach</h2>
+<ol>
+<li>Fonts</li>
+</ol>
+<p>Due to ControlNet, fonts rendered in the output image sometimes look identical to the input image. One way around this is by  inpainting the text on the original image generated on the first step, then render a new image using the same prompt. However, another problem with fonts is that fonts identified by WhatTheFont (A website that identifies font from an image) are paid. Sometimes free downloads are available when you search for the font online, but that hasn&rsquo;t been the case for all the fonts in my experience.</p>
+<p>There is still no websites that does the same thing as WhatTheFont but links to fonts that are free, as far as I know.</p>
+<p>Alternatively could look for free fonts that look similar on websites such as:</p>
+<ul>
+<li><a href="https://www.dafont.com">DaFont</a></li>
+<li><a href="https://fonts.google.com">Google Fonts</a></li>
+</ul>
+<ol start="2">
+<li>Fixed layout</li>
+</ol>
+<p>There is no variation with layout. The layout depends completely on the input slides.</p>
+<h2 id="approaches-that-failed-but-could-work">Approaches that failed but could work</h2>
+<ol>
+<li>Generating everything at once</li>
+</ol>
+<p>This approach also uses ControlNet, but for the input image I used an image with all the slides:</p>
+<p><img src="https://lh3.googleusercontent.com/Hw22SMBksxd2GPkoqS0Ca4a7YMsV1W8O9Me9dh6CM5dS71Beucs-HY8nJhvqQHEgDV1e-G0R4RubbqImlcgcsEDHjujarle980oqbuG0UQLBMg832G5EvIj3y4GEQwIeO4FYBhkqMn0vhRI7uLWVlzM" alt=""></p>
+<p>This didn’t work because:</p>
+<ul>
+<li>The slides were too small, so less details</li>
+<li>It also takes a long time to crop each of them</li>
+</ul>
+<p>This could work if:</p>
+<ul>
+<li>Somehow more details can be rendered on each slide</li>
+<li>This can be done by generating a image in higher resolution, but for these I was already generating them at 1400x2700 which resulted in many crashes</li>
+<li>Or some other technique, maybe with img2img</li>
+<li>A script is written to crop each of the picture automatically</li>
+<li>One way this could be done is using the Image.crop() function in Python PIL</li>
+</ul>
+<ol start="2">
+<li>Asking ChatGPT to generate the prompt</li>
+</ol>
+<p>My previous attempt at using chatGPT for a prompt:
+<a href="https://docs.google.com/document/d/1OD1Dexk3y-IJT206frdklRuWRb-BupImUn9WEr1yYw4/edit">chatgpt prompt for 1028</a></p>
+<p>This approach could probably work with the right prompt, but in my experience, using the descriptions (see google doc above) that chatGPT gave didn’t really give me good results. This was using GPT-3. </p>
+<h2 id="things-i-havent-tried-yet">Things I haven’t tried yet</h2>
+<ol>
+<li>Supercharging the project using GPT-4 and maybe automating it</li>
+</ol>
+<ul>
+<li>Could have GPT-4 act as a designer, and the prompter could be the customer describing what they want for the slide and their target audience. Then the slides would be done in minutes.</li>
+</ul>
+<ol start="2">
+<li>Training a lora with ppt slides so that it could render better slides.</li>
+</ol>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>
