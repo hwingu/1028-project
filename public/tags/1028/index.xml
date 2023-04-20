@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1028 on hwingu</title>
+    <link>https://hwingu.github.io/1028-project/tags/1028/</link>
+    <description>Recent content in 1028 on hwingu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Wed, 19 Apr 2023 08:11:13 +0100</lastBuildDate><atom:link href="https://hwingu.github.io/1028-project/tags/1028/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to create presentation slides with Stable Diffusion and ControlNet</title>
+      <link>https://hwingu.github.io/1028-project/posts/howtoguide/</link>
+      <pubDate>Wed, 19 Apr 2023 08:11:13 +0100</pubDate>
+      
+      <guid>https://hwingu.github.io/1028-project/posts/howtoguide/</guid>
+      <description>Prerequisites: Install the blank slides (Optionally create create one yourself if you want a different layout) Install blank slide images Stable Diffusion A1111 ControlNet Here are resources for setting up A1111 and installing ControlNet.
+Some things you should know Location of your stable diffusion folder
+This is typically found by copy and pasting this into your folder directory as shown below:
+%userprofile%\\stable-diffusion-webui Inside your stable diffusion folder, there will be a lot of files, folders… Below I will be explaining a few that you need for this guide.</description>
+    </item>
+    
+    <item>
+      <title>Creating presentation slides with Stable Diffusion and ControlNet</title>
+      <link>https://hwingu.github.io/1028-project/posts/blogpost/</link>
+      <pubDate>Wed, 19 Apr 2023 07:44:59 +0100</pubDate>
+      
+      <guid>https://hwingu.github.io/1028-project/posts/blogpost/</guid>
+      <description>Goal of the project This project’s goal is to make it easier for anyone to make slides that they want, in any design they want. Essentially it brings customisation to another level because people can start making slide designs if they can describe it and in wayyy less time, so that more time can be spent practising the presentation itself rather than worrying about the design of it.
+Explanation of each step of the process Below will be an explanation of why I did each step, I recommend that you go through the how-to-guide first before reading on.</description>
+    </item>
+    
+  </channel>
+</rss>

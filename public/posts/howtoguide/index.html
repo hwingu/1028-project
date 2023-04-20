@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Prerequisites: Install the blank slides (Optionally create create one yourself if you want a different layout) Install blank slide images Stable Diffusion A1111 ControlNet Here are resources for setting up A1111 and installing ControlNet.
+Some things you should know Location of your stable diffusion folder
+This is typically found by copy and pasting this into your folder directory as shown below:
+%userprofile%\\stable-diffusion-webui Inside your stable diffusion folder, there will be a lot of files, folders… Below I will be explaining a few that you need for this guide." />
+<meta name="keywords" content=", 1028" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://hwingu.github.io/1028-project/posts/howtoguide/" />
+
+
+    <title>
+        
+            How to create presentation slides with Stable Diffusion and ControlNet :: hwingu  — A simple theme for Hugo
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/1028-project/main.b78c3be9451dc4ca61ca377f3dc2cf2e6345a44c2bae46216a322ef366daa399.css" integrity="sha256-t4w76UUdxMphyjd/PcLPLmNFpEwrrkYhajIu82bao5k=">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/1028-project/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/1028-project/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/1028-project/favicon-16x16.png">
+    <link rel="manifest" href="/1028-project/site.webmanifest">
+    <link rel="mask-icon" href="/1028-project/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/1028-project/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="How to create presentation slides with Stable Diffusion and ControlNet">
+<meta itemprop="description" content="Prerequisites: Install the blank slides (Optionally create create one yourself if you want a different layout) Install blank slide images Stable Diffusion A1111 ControlNet Here are resources for setting up A1111 and installing ControlNet.
+Some things you should know Location of your stable diffusion folder
+This is typically found by copy and pasting this into your folder directory as shown below:
+%userprofile%\\stable-diffusion-webui Inside your stable diffusion folder, there will be a lot of files, folders… Below I will be explaining a few that you need for this guide."><meta itemprop="datePublished" content="2023-04-19T08:11:13+01:00" />
+<meta itemprop="dateModified" content="2023-04-19T08:11:13+01:00" />
+<meta itemprop="wordCount" content="1348"><meta itemprop="image" content="https://hwingu.github.io/1028-project/"/>
+<meta itemprop="keywords" content="1028," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hwingu.github.io/1028-project/"/>
+
+<meta name="twitter:title" content="How to create presentation slides with Stable Diffusion and ControlNet"/>
+<meta name="twitter:description" content="Prerequisites: Install the blank slides (Optionally create create one yourself if you want a different layout) Install blank slide images Stable Diffusion A1111 ControlNet Here are resources for setting up A1111 and installing ControlNet.
+Some things you should know Location of your stable diffusion folder
+This is typically found by copy and pasting this into your folder directory as shown below:
+%userprofile%\\stable-diffusion-webui Inside your stable diffusion folder, there will be a lot of files, folders… Below I will be explaining a few that you need for this guide."/>
+
+
+
+    <meta property="og:title" content="How to create presentation slides with Stable Diffusion and ControlNet" />
+<meta property="og:description" content="Prerequisites: Install the blank slides (Optionally create create one yourself if you want a different layout) Install blank slide images Stable Diffusion A1111 ControlNet Here are resources for setting up A1111 and installing ControlNet.
+Some things you should know Location of your stable diffusion folder
+This is typically found by copy and pasting this into your folder directory as shown below:
+%userprofile%\\stable-diffusion-webui Inside your stable diffusion folder, there will be a lot of files, folders… Below I will be explaining a few that you need for this guide." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hwingu.github.io/1028-project/posts/howtoguide/" /><meta property="og:image" content="https://hwingu.github.io/1028-project/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-04-19T08:11:13+01:00" />
+<meta property="article:modified_time" content="2023-04-19T08:11:13+01:00" /><meta property="og:site_name" content="hwingu" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2023-04-19 08:11:13 &#43;0100 BST" />
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/1028-site/posts" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                hwingu</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/1028-project/posts">Blog</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        7 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://hwingu.github.io/1028-project/posts/howtoguide/">How to create presentation slides with Stable Diffusion and ControlNet</a>
+      </h1>
+
+      
+
+      
+        <hr />
+        <aside id="toc">
+          <div class="toc-title">Table of Contents</div>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#prerequisites">Prerequisites:</a>
+      <ul>
+        <li><a href="#some-things-you-should-know">Some things you should know</a></li>
+        <li><a href="#a1111-settings">A1111 Settings</a></li>
+        <li><a href="#controlnet-settings">ControlNet Settings</a></li>
+        <li><a href="#other-useful-things-to-know">Other useful things to know</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-1-creating-the-slide-images">Step 1: Creating the slide images</a></li>
+    <li><a href="#step-2-removing-foreground">Step 2: Removing foreground</a>
+      <ul>
+        <li><a href="#solution-to-artifacts-not-removing">Solution to artifacts not removing</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-3-upscaling">Step 3: Upscaling</a></li>
+    <li><a href="#step-4-applying-background-and-style-to-slides">Step 4: Applying background and style to slides</a>
+      <ul>
+        <li><a href="#pie-charts-bar-charts-and-icons">Pie charts, bar charts and icons</a></li>
+        <li><a href="#texts-text-colour">Texts/ text colour</a></li>
+        <li><a href="#fonts">Fonts</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </aside>
+        <hr />
+
+      
+
+      <div class="post-content">
+        <h2 id="prerequisites">Prerequisites:</h2>
+<ul>
+<li><a href="https://1drv.ms/p/s!App0pCtSTbcBuQyuqVM_MjJNvHTU?e=VrzF1o">Install the blank slides</a> (Optionally create create one yourself if you want a different layout)</li>
+<li><a href="https://1drv.ms/f/s!App0pCtSTbcBuRAHZmb6k8JtdCdu?e=zP66aR">Install blank slide images</a></li>
+<li><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">Stable Diffusion A1111</a></li>
+<li>ControlNet</li>
+</ul>
+<p>Here are resources for <a href="https://www.youtube.com/watch?v=3cvP7yJotUM">setting up A1111</a> and <a href="https://www.reddit.com/r/StableDiffusion/comments/119o71b/a1111_controlnet_extension_explained_like_youre_5/">installing ControlNet</a>.</p>
+<h3 id="some-things-you-should-know">Some things you should know</h3>
+<p><strong>Location of your stable diffusion folder</strong></p>
+<p>This is typically found by copy and pasting this into your folder directory as shown below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ae81ff">%userprofile%\\stable-diffusion-webui</span>
+</span></span></code></pre></div><p><img src="https://lh3.googleusercontent.com/iJSwqDG293E6dGa8XNlsjG-FkdWOMfgPd-dikDVZh92pyUZ1AorF__k-BmLKAuuefI-hI2HynIZnVVm86CXdwt0AU5jBUYVvVmBaf05JEw03nJKr3MWjazbYh5Nx9GxDAA2z_b5YmEd3i21sEpNgql8" alt=""></p>
+<p>Inside your stable diffusion folder, there will be a lot of files, folders… Below I will be explaining a few that you need for this guide.</p>
+<p><img src="https://lh4.googleusercontent.com/LDbA2QzK5Z6g5OkDl57BobR8NP8ZvEGZWCtFb3NorHbOcWNisYAVeSrWP1hxkuEO_-N2PVKUhugh2DDcf43tpBQ5pWBry14gojEJXcRDq9fT4RqD5SW2EZfGqB_w8RQEvyzLOvWBf4_PMVlM9sDbwcQ" alt=""></p>
+<p>webui-user is what you will use to execute the Automatic1111 webui. </p>
+<p>Make sure that your webui-user contains this:</p>
+<pre tabindex="0"><code>@echo off
+
+
+set PYTHON=&#34;C:\\Users\\%userprofile%\\AppData\\Local\\Programs\\Python\\Python310\\python.exe&#34;
+set GIT=
+set VENV\_DIR=
+set COMMANDLINE\_ARGS=
+git pull
+call webui.bat
+</code></pre><blockquote>
+<p>To edit the webui-user file, right click on it (show more options if you’re on windows 11) and click on edit. A notepad should open. Copy and paste the above into the notepad.</p>
+</blockquote>
+<p><img src="https://lh5.googleusercontent.com/Aeei_zRos1m0OnnH7uQSmlzML7y0EAsbxt0_Ia8l_ut5_ff6qNduIg7fAPPYY26FVoQ2rU4IyB07W0baUe6OfgI0YoA_50ecDCpiVGXpc7Sc1EzKvXjwfx8uoXmhmfi45iVzTHDgyXzHH4RiGVYaxGI" alt=""></p>
+<p>The output folder is where all the images you generate are located.</p>
+<p><img src="https://lh6.googleusercontent.com/GOGD6iN8HemE0fI-omchUnGKJrPEZSuT-mh3yTCS8MeAiMooJFrpSa_KbVjEnGp5wE4Gbj2PY-n49_z8jaSfRjIfDzbO-gFtz54-tJb6VSi82uRQO5MgtnyA8j6ByJ7w816CjLpIfjzujdmcPL2g7rE" alt=""></p>
+<p><strong>Extras-images -</strong> contains all images that you have upscaled in the extras tab. </p>
+<p><strong>Img2img -</strong> contains all the images rendered using inpainting and img2img, which we will use later on.</p>
+<p><strong>Txt2img -</strong> contains the standard prompt to image rendered image.</p>
+<p><img src="https://lh3.googleusercontent.com/AZyhY9QuoDVhYOOquG9aTZDyQ8KYKWSHVTqUz_fgE_CQVqaigMRmTy0K0FOLa4n4bUda-3dlylaxU2cADgfIoMYrGMY3o4BW1MZUhdlwXABiFenObs1XKeLUKF1dafX93_sY7x5agUJujhEN_DWSyRI" alt=""></p>
+<p>The <strong>models</strong> folder contains all of the stable diffusion checkpoints, models, upscaler, etc.</p>
+<p><img src="https://lh6.googleusercontent.com/zzfOsy7QBWSvJblvaEeR0agJGbKg5i6NZTDSrzOjexrKPAMdfO27-Pa0DsBviiqrabHq4Ri5R06bLcxMvvfxTjpVRCNwgkLlTm71Am3J8HgKfBKV1cCtWfHdjbpuTK8vTxQG3yiYv5IEbf2AxX9vgzA" alt=""></p>
+<p>The <strong>Stable-diffusion</strong> folder within the models folders will contain all of your checkpoints and where you will put your new checkpoints.</p>
+<p><img src="https://lh3.googleusercontent.com/TrwePpozftMS5pWQIjTQRNxZtacsa9YMm89AtXkPy_LkCD_VjE_0sP73ZJM2-0Ma8cW-MLZ16ieYhPFb0gGPlMtcL4GFegvNuD66JKwqdqTJRWyXkgTz1d1GA9fPz0PAbXyRQ185B538Sw30-WFp5T8" alt=""></p>
+<p><img src="https://lh3.googleusercontent.com/r_nkAtoqDPUnQr9mnqTF_sJJSW8TRT4dAdz3-s9m2_PfxZBn3dNThb7Hfit7vlN35QerwgcaOXIeceYM8UiiEWn8_hY3wSXmtjzkgPgzUnLJVNbJqZg1YDRmC_AD8DM6kYoXDGG7tjL52rfLcQKQJ2k" alt=""></p>
+<p>Above is the <strong>A1111 WebUI</strong> where you will be doing almost everything.</p>
+<p>There will only be a few settings we are changing in this guide:</p>
+<h3 id="a1111-settings">A1111 Settings</h3>
+<p><strong>Width and height -</strong> The resolution</p>
+<p><strong>Batch count -</strong> How many images are being rendered at once (I like to set this at 4, depends on your gpu)</p>
+<p><strong>Prompt -</strong> Prompt for the image</p>
+<p><strong>Negative prompt -</strong> What you don’t want in your image</p>
+<h3 id="controlnet-settings">ControlNet Settings</h3>
+<p><strong>Preprocessor - <img src="https://lh4.googleusercontent.com/EY27ct2SYS-YUunQCpHzqb-4kERsRGsHPmp_ChKikgFW5K5YWbkzgTzJVKcek1ev7j1VBpDU0SeafDKWfIW6KRNqq46BYuPnCc4pWCvQG7hA9-RfQEpKHMt4eqzcO5XqFBjWEJIno6tkHZ-c1jVIPu4" alt=""><img src="https://lh5.googleusercontent.com/OCuE9TI29R6q65c12bJsVoqOQg0_GlOxHdxf-ZotINCBMDhgbSSPjow9W2r_J88KbMCVd-mLLe6TXvZq2HaE0-1b2SqFk6QyGs2mLSZk3wkVdntZ-HmcWGgA4pNN-ToWWnWGQrGTlBEdeM7HNb33Ut0" alt=""></strong></p>
+<p><strong>Model -</strong> ControlNet’s model</p>
+<h3 id="other-useful-things-to-know">Other useful things to know</h3>
+<p> <strong><img src="https://lh6.googleusercontent.com/gCMVi1QEALGf1YuL6pW1V6hKNZT_MIWie_jfCoADFPqMrryERq2WorFEy_AS0GICL0QhG2n58O2U8fd9RcxFhIUSA1Inabkvwh91ncVN0ULtR4qQb64qZOZA867dAkc_3_bLnvqcxoHOqJYueeL7Gm8" alt=""></strong></p>
+<p>This button located under the ‘Generate’ button allows you to paste prompt and settings from last image generation</p>
+<p><img src="https://lh3.googleusercontent.com/IgUxcOSzyF6wMr6pCMmOcHaFQWWt_kn3U4IAsjgqjrMajngpnIWTm6C81KoL1GqeawAUI7ctEe_Blr2TtfczuO1XOsx5tmHGL2DCWMhmRK5KbfB58ve1P5ZnV9B3D639Sf4WFb-iS1Jbr_doYdMqys8" alt=""></p>
+<p><strong>The folder icon</strong> can also be used to open stable diffusion folder</p>
+<p><strong>Send to ‘ ‘</strong> allows you to send the image rendered to the corresponding places directly.</p>
+<p><img src="https://lh5.googleusercontent.com/80tVxDUMV7gTTWoiWazzTtSL_Li0CC0GgPfSiKXjv0wfAFb7RNBZWp_etMSA7qCW7uSIiumrxq7W46SQAIOHFFWF4izKVQe2AYH0W2DSgu3i1dhZW_4uiyGJ_EOj6a1i-anoH6TsWlhHmObTfQdjfoQ" alt=""></p>
+<p>The PNG info is extremely useful, if you put an image you rendered with A1111. It gives you all the information about the prompt, negative prompt and settings you used to render the image.</p>
+<h2 id="step-1-creating-the-slide-images">Step 1: Creating the slide images</h2>
+<p>Before you start, you have to make a prompt or find some ‘inspirations’. Here are some websites for finding amazing prompts.</p>
+<blockquote>
+<p>Even if you are planning on making your own prompt, I do recommend looking through these websites to get an idea on how people make good prompts.</p>
+</blockquote>
+<ul>
+<li><a href="https://lexica.art/">Lexica.art</a></li>
+<li><a href="https://civit.ai/">Civit.ai</a></li>
+<li><a href="https://www.reddit.com/r/StableDiffusion/">Stable Diffusion subreddit</a></li>
+</ul>
+<blockquote>
+<p>Once you find an image that you like, copy and paste and add ‘presentation slide template’ at the front of the prompt. For example, “<strong>presentation slide template</strong>, Vintage seamless pen traced print, minimalist flowers and foliage wallpaper risograph pattern white and neutral colors, greenish background, aesthetic, high quality”</p>
+</blockquote>
+<p>Also, it is good to have a negative prompt to avoid things you do not want on your slide. To give you some ideas, I normally use:</p>
+<pre tabindex="0"><code>people, faces, distorted text, blurry, childish, messy, amateur, grainy, low-res, ugly, deformed, mangled, disproportional
+</code></pre><p>Next, use the image of the blank slide as the ControlNet input and use the settings below.</p>
+<p>To insert the the ControlNet image, in Automatic1111, scroll down until you see <strong>ControlNet</strong>.</p>
+<p><img src="https://lh5.googleusercontent.com/EUrLr0uQ5Ak_pvENJsXLK05-pEw0AkdkRZs2yk5_JtMk03_ToN-xraewXFpWGR_T6LHpu1XycF-gCDkcRBiFlPE2Hh1qYYITS1u8mHS7Hnq8rnOQwmjsOcHVurah6Za-AWlAmd91rvXz2oIZyry2Qs8" alt=""></p>
+<p>Clicking on it should reveal the ControlNet settings.</p>
+<p>Drag your image into the image box like the one below.</p>
+<p><img src="https://lh6.googleusercontent.com/nBtCUAhAP8kC7dbDQ04t6g109zJyhERsZqpt7kEjvrg6vWBX8iOgjVwPr_X6BaV5HnOtypK7sKwamyYQP2xCS5nTzn0ILz2LMNGSmvfN_coYwrqamMycQxgmkGn2VElgfcIq6AoV1Pw2mPEe8TMxs3k" alt=""></p>
+<p>Also in the ControlNet settings, make sure to check <strong>Enable</strong> and set the Preprocessor and model both to canny. Below are the settings used for this step.</p>
+<p><strong>Example Blank slide</strong></p>
+<p><img src="https://lh4.googleusercontent.com/GcsZbszCJ6HxHwW9EcJHdRPcfdv2yCK3FfScXPN7AflavF3NYYN5bzlPr3slDwgDkRORgXoHrRtb0t26IU3svDYnYKmih55T44Cs8zePY9X_GJeAdZhsS9AsIzdMche1bva62nmb83Br0QZQyN987oI" alt=""></p>
+<p><strong><em>Text2img settings</em></strong></p>
+<p><img src="https://lh5.googleusercontent.com/kCdOtiOF0PNa0pQr7Y0maHrTFRSJBxrL1eZnK0y4CaeqX3TGucM8mBZHaff1MfJDsCJRyciLiwgZoRIA0E9J7JCq84QQwNzQlJGx9p_zy9ZeZqyC6o8aTG-0b8PagBqQJM5TNRCHeB1AwJxegikFUf8" alt=""></p>
+<p><strong><em>ControlNet settings</em></strong></p>
+<p><img src="https://lh3.googleusercontent.com/WJTB3xQDwa64uDpHLdhxFb0dvEb8tgtIS6VQEAKW8B1va5aZUpGGBPWlYONOwdtRvI_yEPzvUck90n7fw_t26DjEBQIebLaEEDz_8aom1l6gPpikWiPujN3x_kHY9q_tO03UmCk8riv1CLVfb8kCwD8" alt=""></p>
+<p>Do this step for all the <a href="https://onedrive.live.com/?id=1B74D522BA4749A%217312&amp;cid=01B74D522BA4749A">blank slide images</a> </p>
+<blockquote>
+<p>All the slide images generated at this stage are located in the <strong>txt2img folder</strong>.</p>
+</blockquote>
+<blockquote>
+<p>You can increase the batch count under <strong>text2img settings</strong> if you&rsquo;d like to render more than 1 image at a time.</p>
+</blockquote>
+<h2 id="step-2-removing-foreground">Step 2: Removing foreground</h2>
+<p>If the image has a solid background (background with only 1 colour), use an editing software (e.g. Microsoft Paint) to delete the text. </p>
+<p>If not, follow the steps below:</p>
+<ol>
+<li>Go to inpaint, located under img2img tab</li>
+<li>Use inpainting to cover up anything to remove</li>
+<li>Make sure that denoising strength is set to 0.75 or higher (Basically higher denoising strength, more different from original image). Keep your prompt the exact same as the original for your first attempt at removing the foreground</li>
+</ol>
+<p>The settings should look like this:
+<img src="https://lh5.googleusercontent.com/bf42ki4tiE6K8Nze78WXlUuCG_zNNA2p72Tuxhaas3FmhhdS-saNcMQZpDfoVj2Jdeu6IoEiNmCWnkMrD-yvcwDIwmod0w8DFv5l7IFZsbEBXK-m3F5_CPr_8Aklqzw7tBke9L7aZ2HgjDnRlX93EI4" alt=""></p>
+<ol start="4">
+<li>Repeat for every image</li>
+</ol>
+<h3 id="solution-to-artifacts-not-removing">Solution to artifacts not removing</h3>
+<p>Sometimes, there will be aritifacts on the image that don&rsquo;t go away no matter how many times the process above is done.</p>
+<p>One example of this is with this image:</p>
+<p><img src="https://lh3.googleusercontent.com/-hcZvcSA_wMA8nLaplAs4GzpbUC4rYqByLdcVVjCpSGlxsoHSuDDK14nT0jIQrLIDzAetpUvIqwslAkweKSTp6C7uEo4wNX5wK5FlBrpmhChp6HIzmAKuQjpRFbY6x-8QYjwxFI0Re5zUFBn9wH3M8I" alt=""></p>
+<p>No matter how many times I render the image with the artifact on the top left covered with inpainting, some artifact pops up on the top left.</p>
+<p>The solution to this was changing the prompt to just “starry lights”. Just try to be creative with the prompt, remove your original prompt and start over with a new prompt.</p>
+<p><img src="https://lh6.googleusercontent.com/EaxxJjRhxx4pDg9pmpJYPqf1vmHhW80AzYqp4s1LjwZWq1lUZJ7OmsbEi3Ozj2WHBEU0xgGA0CU_KYRf59xt2wH-4xFu4-Z4vtecnmfgdUTH29D2SQDDnTHnC-1BCoRLJJQq7ErXXzAW-iBd_EI7bbk" alt=""></p>
+<h2 id="step-3-upscaling">Step 3: Upscaling</h2>
+<p>Now it’s time to upscale the background images, you will be able to find the background images under the img2img-images folder under outputs.</p>
+<p>Navigate to img2img and insert your image.</p>
+<p><img src="https://lh3.googleusercontent.com/LbWhnTBjDmqvqpkOMJfweTGvUYyDfZv-0yoD9SgtoCe8MjFpBtjcdB-In78wCLOn3AxH-K_ViqGS_snaqv17boZlSGBt10ueRDiKUmBDe18IJKVoX-HUe9Yz8hevkV2EqiJ45uyVi7mZMBuq0CemkQY" alt=""></p>
+<p>Use the same prompt you used for your first step. Set denoising strength to 0.5 and set height and width to 1152x768 (1.5x 768x512), Go higher or lower depending on your GPU. Image of img2img settings below for reference.</p>
+<p><img src="https://lh3.googleusercontent.com/CjisMF6316zB-n29gWQZkc_c-rDcH-O39R3BSxdfnF0XFxA7ww8iARj0e7_ZnCcT4QRcJHP1WmiKbN8R4F9VQjMHmRfp-FyqXzIHiKDP9fvUUvI5vBOo2C3s7wgwJr9T-NksU9AeU6twraSfw1IEqZ0" alt=""></p>
+<p>For images that are very detailed, you might have to go for a lower denoising strength like 0.45.</p>
+<p>The point of this step is to prevent low resolution artifacts that are very noticeable when the image is upscaled straight away. Img2Img can render the image in a higher resolution first.</p>
+<p>If you like the rendered image, send it to extras.</p>
+<p><img src="https://lh4.googleusercontent.com/AhM6Gr67OmaN4tGOG40K9btUDy72cjnqzF_UWzBUrXvylmP-t8udZN_el5EKM3SDEz5Azl5Dbf7PBOyJ_01DtCF-qpLuGz2kToc4J0kx1rTIzTwxn42OLmehewhd3YyfEw6Buv79QB0YCP1ffcdbWiI" alt=""></p>
+<p><img src="https://lh4.googleusercontent.com/AT8BaI4amWeKvzb7X_KSnG8V6R7HlImOFQAdimv2mAquPu8pMT8WAtcKsy0BSm_hdmEzq4PZI1DY-9GJsoiC1tvyL5nChaz6LjCP3auRrC-I4M5p9eY1GVyM7NdtOGwE-F9ZPFtCTKOo_azTsW0DiDY" alt=""></p>
+<p>The only setting to change here is Upscaler 1. From my experience, 4x-UltraSharp and R-ESRGAN 4x+ both works fine. You may want to upscale the images in a lower resolution, by decreasing the resize, to lower the image size.</p>
+<h2 id="step-4-applying-background-and-style-to-slides">Step 4: Applying background and style to slides</h2>
+<p>Open up the <a href="https://1drv.ms/p/s!App0pCtSTbcBuQyuqVM_MjJNvHTU?e=VrzF1o">slides that I made</a>, or yours if you made one yourself. All you need to do is change the background of each slide to the upscaled background. You can find the upscaled background in the extras folder located in the output folder.</p>
+<p>The layout of the texts and graphs should already be in place.</p>
+<p>To change the background, there’s a format background button in the design tab.</p>
+<p>In <strong>format background</strong>, select <strong>Picture from File</strong></p>
+<h3 id="pie-charts-bar-charts-and-icons">Pie charts, bar charts and icons</h3>
+<p>Powerpoint allows for an in depth customization of data charts such as pie charts and bar charts. Customisations include:</p>
+<ul>
+<li>Colours </li>
+<li>Gradient </li>
+<li>Shadows</li>
+</ul>
+<p>Simply double click on the part of the chart, whether its a pie chart or a bar chart, that you want to customise to bring out the customisation tab</p>
+<p><img src="https://lh3.googleusercontent.com/cILoECELbaJlaIDZaTppxcZwuWkKrT1sYUStDfYNMZE9rgW_RYB_R3-plmxC7jnCq96a08sYYAqQGg5hcubTmW9nFalsHGr6fcJ9cuz2DfQ7HIfbRdSTuMuQRj_0qbNsaEudYjNQJtvNS4hvb7pnpf8" alt=""></p>
+<h3 id="texts-text-colour">Texts/ text colour</h3>
+<p>To further customise it other than colour, right click text and click on ‘Format Shape’ which will allow customisations for shadow, glowing effects, etc. </p>
+<h3 id="fonts">Fonts</h3>
+<p>As for the font, sometimes it generates a new font, sometimes it doesn’t on the original image that you’ve rendered in step 1 because we are using ControlNet.</p>
+<blockquote>
+<p>There’s one way around this though which is inpaint. Just pick an image you rendered on step 1, keep settings all the same and using inpaint brush, cover the texts.</p>
+</blockquote>
+<p>If you lost your prompt and settings, there’s a tab called PNG info in A1111. Put your image in there and it should tell you the prompt and settings used to render the image.</p>
+<p><img src="https://lh4.googleusercontent.com/jbd5z8GbkpsqRSOBwHgCbEXRd2pd4gLvtX64OXTOJ7qal7ce5dOTL9qavwInhrTTcXl-ui773iq20hKWdGl5PIQYgGUNwIkEYSiFGLIvDwPdmZmQx0D9dAoOVh0F6nqqEDE2nQaHaY_ifQ3s6C5tsG4" alt=""></p>
+<p>Once the new font is rendered, you could use <a href="https://www.myfonts.com/pages/whatthefont">WhatTheFont</a> (An font identifying website)</p>
+<p>This method is a bit of a gamble though since most of the fonts there are paid. Sometimes you can search for the font and a free version may come up if you’re lucky.</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://hwingu.github.io/1028-project/tags/1028/">1028</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        1348 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2023-04-19 08:11
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+    <div class="pagination">
+        
+        <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+        </div>
+        
+
+        <div class="pagination__buttons">
+            
+
+            
+            <span class="button next">
+                <a href="https://hwingu.github.io/1028-project/posts/blogpost/">
+                    <span class="button__text">Creating presentation slides with Stable Diffusion and ControlNet</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/1028-project/bundle.min.205d491810c28f95aa953fae884e1c27abe13fdf93ec63b882d0036b248d4a6282eb2d134e4e7225c6ad6e86db87b08488a361ca4a7383d01fcff43f3d57b9c3.js" integrity="sha512-IF1JGBDCj5WqlT&#43;uiE4cJ6vhP9&#43;T7GO4gtADaySNSmKC6y0TTk5yJcatbobbh7CEiKNhykpzg9Afz/Q/PVe5ww=="></script>
+
+
+
+    </body>
+</html>
