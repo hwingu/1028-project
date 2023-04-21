@@ -1,4 +1,4 @@
-baseurl      = "https://hwingu.github.io/1028-site/"
+baseurl      = "https://hwingu.github.io/1028-project/"
 title        = "1028"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
@@ -42,7 +42,7 @@ images = [""]
 
   [languages.en.params.logo]
     logoText = "hwingu"
-    logoHomeLink = "/1028-site/posts"
+    logoHomeLink = "/1028-project/posts"
   # or
   #
   # path = "/img/your-example-logo.svg"
