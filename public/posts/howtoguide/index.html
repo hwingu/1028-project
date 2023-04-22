@@ -44,7 +44,7 @@ Some things you should know Location of your stable diffusion folder
 This is typically found by copy and pasting this into your folder directory as shown below:
 %userprofile%\\stable-diffusion-webui Inside your stable diffusion folder, there will be a lot of files, folders… Below I will be explaining a few that you need for this guide."><meta itemprop="datePublished" content="2023-04-19T08:11:13+01:00" />
 <meta itemprop="dateModified" content="2023-04-19T08:11:13+01:00" />
-<meta itemprop="wordCount" content="1348"><meta itemprop="image" content="https://hwingu.github.io/1028-project/"/>
+<meta itemprop="wordCount" content="1372"><meta itemprop="image" content="https://hwingu.github.io/1028-project/"/>
 <meta itemprop="keywords" content="1028," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://hwingu.github.io/1028-project/"/>
@@ -93,7 +93,7 @@ This is typically found by copy and pasting this into your folder directory as s
         <div class="container">
             <header class="header">
     <span class="header__inner">
-        <a href="/1028-site/posts" style="text-decoration: none;">
+        <a href="/1028-project/posts" style="text-decoration: none;">
     <div class="logo">
         
             <span class="logo__mark">></span>
@@ -332,7 +332,11 @@ call webui.bat
 <h3 id="fonts">Fonts</h3>
 <p>As for the font, sometimes it generates a new font, sometimes it doesn’t on the original image that you’ve rendered in step 1 because we are using ControlNet.</p>
 <blockquote>
-<p>There’s one way around this though which is inpaint. Just pick an image you rendered on step 1, keep settings all the same and using inpaint brush, cover the texts.</p>
+<p>There’s one way around this though which is inpaint. Just pick an image you rendered on step 1, denoising strength should be at the lower end (0.5-0.6), keep every other setting the same and use inpaint brush to cover the texts. Rendering the image again should render an image with the new font.</p>
+</blockquote>
+<blockquote>
+<p>Example:
+<img src="https://lh3.googleusercontent.com/EYEjG1Hfrt0YcGbo8Zv5igKyPKUTJEh3N5XAsKJ2dZPGUW6fljgG9nejmdDTYTTdC8GprB0e3467OcSSHyZSa9D7CP5Zb_o9VgTFw_ja-uuWl9ZRXFV9TN3EpSm1QBAIicFrGLy5EbYwoMxCnSEuyM8" alt=""><img src="https://lh3.googleusercontent.com/gj6X1nyxenILGIwU1-e-Z2dpklTsMCxIG-1SuXVgAvYHkVI9El2lLK2xCvOxRzF6NxKfKFKX8BeacABgd92omdSoyRRjNLF33oV2bPlzbTrZ8i1wpATVYRzkO_a8iRJc_re9jbvFLp1BtIHIDPOBf6k" alt=""><img src="https://lh5.googleusercontent.com/ZD583SsZZ407Tj_6xCRTdh6FoU9eQQt5CCbs3P2rVJzLhGFSj-RgmBqOvNS22sZZlFsNineUm2OqPVr693emLLIiOG8iZBd6tTAyDYkoqjiA_K-i1eqwfad-YK4fuEdyw3fkvcf8xXfSc85fW2lm_DQ" alt=""></p>
 </blockquote>
 <p>If you lost your prompt and settings, there’s a tab called PNG info in A1111. Put your image in there and it should tell you the prompt and settings used to render the image.</p>
 <p><img src="https://lh4.googleusercontent.com/jbd5z8GbkpsqRSOBwHgCbEXRd2pd4gLvtX64OXTOJ7qal7ce5dOTL9qavwInhrTTcXl-ui773iq20hKWdGl5PIQYgGUNwIkEYSiFGLIvDwPdmZmQx0D9dAoOVh0F6nqqEDE2nQaHaY_ifQ3s6C5tsG4" alt=""></p>
@@ -363,7 +367,7 @@ call webui.bat
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        1348 Words
+        1372 Words
       </p>
 
       <p>

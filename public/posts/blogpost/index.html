@@ -40,7 +40,7 @@ Explanation of each step of the process Below will be an explanation of why I di
 <meta itemprop="description" content="Goal of the project This project’s goal is to make it easier for anyone to make slides that they want, in any design they want. Essentially it brings customisation to another level because people can start making slide designs if they can describe it and in wayyy less time, so that more time can be spent practising the presentation itself rather than worrying about the design of it.
 Explanation of each step of the process Below will be an explanation of why I did each step, I recommend that you go through the how-to-guide first before reading on."><meta itemprop="datePublished" content="2023-04-19T07:44:59+01:00" />
 <meta itemprop="dateModified" content="2023-04-19T07:44:59+01:00" />
-<meta itemprop="wordCount" content="1534"><meta itemprop="image" content="https://hwingu.github.io/1028-project/"/>
+<meta itemprop="wordCount" content="1765"><meta itemprop="image" content="https://hwingu.github.io/1028-project/"/>
 <meta itemprop="keywords" content="1028," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://hwingu.github.io/1028-project/"/>
@@ -85,7 +85,7 @@ Explanation of each step of the process Below will be an explanation of why I di
         <div class="container">
             <header class="header">
     <span class="header__inner">
-        <a href="/1028-site/posts" style="text-decoration: none;">
+        <a href="/1028-project/posts" style="text-decoration: none;">
     <div class="logo">
         
             <span class="logo__mark">></span>
@@ -130,7 +130,7 @@ Explanation of each step of the process Below will be an explanation of why I di
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        8 minutes
+        9 minutes
 
         
       </p>
@@ -152,12 +152,14 @@ Explanation of each step of the process Below will be an explanation of why I di
     <li><a href="#goal-of-the-project">Goal of the project</a></li>
     <li><a href="#explanation-of-each-step-of-the-process">Explanation of each step of the process</a>
       <ul>
+        <li><a href="#why-stable-diffusion">Why Stable Diffusion?</a></li>
         <li><a href="#1--creating-the-prompt-and-generating-images-of-presentation-slides">1.  Creating the prompt and generating images of presentation slides</a></li>
         <li><a href="#2--removing-the-foreground-text-objects-etc">2.  Removing the foreground (text, objects, etc)</a></li>
         <li><a href="#3--upscaling-the-background">3.  Upscaling the background</a></li>
         <li><a href="#4--apply-background-to-presentation-slide">4.  Apply background to presentation slide</a></li>
       </ul>
     </li>
+    <li><a href="#interesting-things-ive-found-with-this-approach">Interesting things I&rsquo;ve found with this approach</a></li>
     <li><a href="#disadvantages-with-the-current-approach">Disadvantages with the current approach</a></li>
     <li><a href="#approaches-that-failed-but-could-work">Approaches that failed but could work</a></li>
     <li><a href="#things-i-havent-tried-yet">Things I haven’t tried yet</a></li>
@@ -173,6 +175,8 @@ Explanation of each step of the process Below will be an explanation of why I di
 <p>This project’s goal is to make it easier for anyone to make slides that they want, in any design they want. Essentially it brings customisation to another level because people can start making slide designs if they can describe it and in wayyy less time, so that more time can be spent practising the presentation itself rather than worrying about the design of it.</p>
 <h2 id="explanation-of-each-step-of-the-process">Explanation of each step of the process</h2>
 <p>Below will be an explanation of why I did each step, I recommend that you go through the <a href="http://localhost:1313/1028-site/posts/howtoguide/">how-to-guide</a> first before reading on.</p>
+<h3 id="why-stable-diffusion">Why Stable Diffusion?</h3>
+<p>I chose stable diffusion because</p>
 <h3 id="1--creating-the-prompt-and-generating-images-of-presentation-slides">1.  Creating the prompt and generating images of presentation slides</h3>
 <p><strong>Model:</strong> Deliberate_v2</p>
 <p><strong>Prompt:</strong> presentation slide template, Vintage seamless pen traced print, minimalist flowers and foliage wallpaper risograph pattern white and neutral colors, greenish background, aesthetic, high quality</p>
@@ -226,6 +230,7 @@ Explanation of each step of the process Below will be an explanation of why I di
 <p><img src="https://lh5.googleusercontent.com/kxQdvV5VF4h1yeuI-NaiCR1EEKzbp0T0K4Z1c2vRAm6MfcXapW3Wug602hIlygMOAV3ZRC408NkbEvj9Sa2sZe27dFYre6X7qaDLAk5JI9L2S9dks_Xu_-ooMhhs2WbhdkCBJvVNGAvZ7eT_lNdhIu8" alt=""></p>
 <p>I have already created all the slides in my powerpoint, so all I had to do was duplicate the slides and apply the background + customise colours for the charts</p>
 <p><img src="https://lh5.googleusercontent.com/Y7ao8Ee4MlnJcCY_oeAqV_FFxTTMW1gvEdDlsFf9_IsbrNGTRKuMdI5FdoiQ3qD6LMf5xg82Dqo6kFWqtuohQh_zFBNZQ8h2fNKs2xzzWZffYmQEj8e9cOSU8YnCm232KE2DUi_rIuv7-Yu8Z-7Ip1Q" alt=""></p>
+<h2 id="interesting-things-ive-found-with-this-approach">Interesting things I&rsquo;ve found with this approach</h2>
 <h2 id="disadvantages-with-the-current-approach">Disadvantages with the current approach</h2>
 <ol>
 <li>Fonts</li>
@@ -266,6 +271,41 @@ Explanation of each step of the process Below will be an explanation of why I di
 <p>My previous attempt at using chatGPT for a prompt:
 <a href="https://docs.google.com/document/d/1OD1Dexk3y-IJT206frdklRuWRb-BupImUn9WEr1yYw4/edit">chatgpt prompt for 1028</a></p>
 <p>This approach could probably work with the right prompt, but in my experience, using the descriptions (see google doc above) that chatGPT gave didn’t really give me good results. This was using GPT-3. </p>
+<ol start="3">
+<li>MidJourney</li>
+</ol>
+<p>MidJourney had amazing results even with simple prompts using only txt2img, however my free trial ended so I couldn&rsquo;t use MidJourney anymore but I wonder what could be done using MidJourney V5.</p>
+<p><strong>Example of MidJourney:</strong>
+<img src="https://lh6.googleusercontent.com/nZ7bnUiGaoQARAZ4oU4qMZ2iBGdk88M_FVSXBtxlTAjCV04c7Nr1r1DIpCu9g73wvtsHCBrCfBoblG9OhfbPiI5s65VR7J_FoTDckYgGWtX-VzaeqquOpPh3WmM75bFujs0MXGgQasUggZpcB8z5cqo" alt=""><img src="https://lh6.googleusercontent.com/hT9fAF-p8-H3vahYql_8Hp8MvwL35EUO_LH9oZd-lxyYBtenL7xRyvqD7Rp1RgeJp8QL7n8ZMGlmYEBssZwoaDjAD1BPSqKcgt4NLRHZny120MybUCwif-vX9P2cOkh3JQBv7F9UJ6JSEcoWoACeLJY" alt=""></p>
+<p>Definitely not perfect, but had a lot of potential.</p>
+<ol start="4">
+<li>img2img to generate the slides</li>
+</ol>
+<p>This was before ControlNet came out.</p>
+<p>This approach had the same idea as the ControlNet one where I used a input image to guide SD to rendering a ppt-ish slide. Example below</p>
+<pre tabindex="0"><code>Prompt: title powerpoint slide, single page, black and white, mountains in the background, clear text, professional, sleek, sharp
+Negative prompt: multiple pages, people, faces, distorted text
+</code></pre><p>Input image:
+<img src="https://lh5.googleusercontent.com/29FnOQKPmet9oWIgqL36HkQDk0OwIVqZFs8eDLbmTTHP_-wagD1SNu7HxYyR_97OulYTDBKGTQMAzVcaV_1BJIF-cWHWKOZQCJjXy59JnXqTg3aIDYxUO35u-JLwulQX3jQuznO7plYxbn5J2l8Ehxs" alt="">
+Output:
+<img src="https://lh3.googleusercontent.com/dqcaa6dz0UGihcqVMuihhDEXmneb2pGlsFyJY0ybZ0tJYThW9bho5tfKER-YdyvJOTEBE4F0B-SstAg5njmNahpfuAbt2DB91atj14hq-RSzQf2d0oTQovZb4RP-Bdgxs5VsmLTFYBjjFftpXwVK6RQ" alt=""></p>
+<p>The layout of the slides definitely were not as restricted as the current approach.</p>
+<ol start="5">
+<li>Rendering images with lora trained with presentation slides found online</li>
+</ol>
+<p>I trained some images of slides that I found on google:
+<img src="https://lh5.googleusercontent.com/T2103shVcF7PNmvQexbUGZ4p6wy2snAO4HyEDgrI2NyTGw1_zeb9PJJ_kPU_Eie_7PcCuvgNt7S47Wu7Q7XUP3_bX3jxITg-B_qQYQ_K8kzfw3WtODDZThlvPh6WbhZPkS9DkZkXjYIR2zu2Lu0LWtA" alt=""></p>
+<blockquote>
+<p>The training data only consists of title slides.</p>
+</blockquote>
+<p><strong>Test that I did</strong></p>
+<pre tabindex="0"><code>Prompt: presentation slide template, &lt;lora:last:1&gt;, tree, leaves&gt;
+</code></pre><p><strong>With lora</strong>
+<img src="https://lh6.googleusercontent.com/46tseX0wjN7MgzlCpkzCfgGoYdEkiuetsUvobG9kfoY-hK-xtIuEVree7QRZkf128dnUXXzBFIC-Tmul1K1NnANQX8xwqjVuZe4UkF9Lrz-3Qcz4E5HR83ewRTQIAYhnRsXi7ed1FBhixwmOQArgPJ0" alt="">
+<strong>Without lora</strong>
+<img src="https://lh4.googleusercontent.com/MJcdY2llZrRmtrt-3j0ukKN5t8O2mhPhcDOtwGHAjeAVyCslkB3ZRzTn2wAB4T2eDa-Q8FM4_ZOb8RWjC-hHtq2qPzxsZxecU09qAoSjg4S9PNBsB3cJcRpSznqpuBszqGhsqfMc-l6G7bnMMPPvHFA" alt=""></p>
+<p>While it definitely did render a more ppt-ish slide in the example above, I&rsquo;ve tried many more tests but most of the slides doesn&rsquo;t really match the prompt or looks straight up broken.</p>
+<p>If you want to try out the lora, here&rsquo;s the <a href="https://1drv.ms/u/s!App0pCtSTbcBgak1XhOgCLd5K4tkVA?e=Ko3baa">link</a></p>
 <h2 id="things-i-havent-tried-yet">Things I haven’t tried yet</h2>
 <ol>
 <li>Supercharging the project using GPT-4 and maybe automating it</li>
@@ -274,7 +314,7 @@ Explanation of each step of the process Below will be an explanation of why I di
 <li>Could have GPT-4 act as a designer, and the prompter could be the customer describing what they want for the slide and their target audience. Then the slides would be done in minutes.</li>
 </ul>
 <ol start="2">
-<li>Training a lora with ppt slides so that it could render better slides.</li>
+<li>Training a lora with a lot of ppt slides so that it could render better slides.</li>
 </ol>
 
       </div>
@@ -301,7 +341,7 @@ Explanation of each step of the process Below will be an explanation of why I di
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        1534 Words
+        1765 Words
       </p>
 
       <p>

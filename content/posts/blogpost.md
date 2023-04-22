@@ -244,8 +244,27 @@ Output:
 
 The layout of the slides definitely were not as restricted as the current approach.
 
+5. Rendering images with lora trained with presentation slides found online
+
+I trained some images of slides that I found on google:
+![](https://lh5.googleusercontent.com/T2103shVcF7PNmvQexbUGZ4p6wy2snAO4HyEDgrI2NyTGw1_zeb9PJJ_kPU_Eie_7PcCuvgNt7S47Wu7Q7XUP3_bX3jxITg-B_qQYQ_K8kzfw3WtODDZThlvPh6WbhZPkS9DkZkXjYIR2zu2Lu0LWtA)
+
+> The training data only consists of title slides.
+
+**Test that I did**
+```
+Prompt: presentation slide template, <lora:last:1>, tree, leaves>
+```
+**With lora**
+![](https://lh6.googleusercontent.com/46tseX0wjN7MgzlCpkzCfgGoYdEkiuetsUvobG9kfoY-hK-xtIuEVree7QRZkf128dnUXXzBFIC-Tmul1K1NnANQX8xwqjVuZe4UkF9Lrz-3Qcz4E5HR83ewRTQIAYhnRsXi7ed1FBhixwmOQArgPJ0)
+**Without lora**
+![](https://lh4.googleusercontent.com/MJcdY2llZrRmtrt-3j0ukKN5t8O2mhPhcDOtwGHAjeAVyCslkB3ZRzTn2wAB4T2eDa-Q8FM4_ZOb8RWjC-hHtq2qPzxsZxecU09qAoSjg4S9PNBsB3cJcRpSznqpuBszqGhsqfMc-l6G7bnMMPPvHFA)
+
+While it definitely did render a more ppt-ish slide in the example above, I've tried many more tests but most of the slides doesn't really match the prompt or looks straight up broken.
+
+If you want to try out the lora, here's the [link](https://1drv.ms/u/s!App0pCtSTbcBgak1XhOgCLd5K4tkVA?e=Ko3baa)
 ## Things I haven’t tried yet
 
 1.   Supercharging the project using GPT-4 and maybe automating it
 * Could have GPT-4 act as a designer, and the prompter could be the customer describing what they want for the slide and their target audience. Then the slides would be done in minutes.
-2.   Training a lora with ppt slides so that it could render better slides.
+2.   Training a lora with a lot of ppt slides so that it could render better slides.
