@@ -328,6 +328,9 @@ As for the font, sometimes it generates a new font, sometimes it doesn’t on th
 
 >There’s one way around this though which is inpaint. Just pick an image you rendered on step 1, denoising strength should be at the lower end (0.5-0.6), keep every other setting the same and use inpaint brush to cover the texts. Rendering the image again should render an image with the new font.
 
+>Example:
+![](https://lh3.googleusercontent.com/EYEjG1Hfrt0YcGbo8Zv5igKyPKUTJEh3N5XAsKJ2dZPGUW6fljgG9nejmdDTYTTdC8GprB0e3467OcSSHyZSa9D7CP5Zb_o9VgTFw_ja-uuWl9ZRXFV9TN3EpSm1QBAIicFrGLy5EbYwoMxCnSEuyM8)![](https://lh3.googleusercontent.com/gj6X1nyxenILGIwU1-e-Z2dpklTsMCxIG-1SuXVgAvYHkVI9El2lLK2xCvOxRzF6NxKfKFKX8BeacABgd92omdSoyRRjNLF33oV2bPlzbTrZ8i1wpATVYRzkO_a8iRJc_re9jbvFLp1BtIHIDPOBf6k)![](https://lh5.googleusercontent.com/ZD583SsZZ407Tj_6xCRTdh6FoU9eQQt5CCbs3P2rVJzLhGFSj-RgmBqOvNS22sZZlFsNineUm2OqPVr693emLLIiOG8iZBd6tTAyDYkoqjiA_K-i1eqwfad-YK4fuEdyw3fkvcf8xXfSc85fW2lm_DQ)
+
   
 
 If you lost your prompt and settings, there’s a tab called PNG info in A1111. Put your image in there and it should tell you the prompt and settings used to render the image.
