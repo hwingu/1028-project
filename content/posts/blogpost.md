@@ -16,6 +16,9 @@ This project’s goal is to make it easier for anyone to make slides that they w
 
 Below will be an explanation of why I did each step, I recommend that you go through the [how-to-guide](http://localhost:1313/1028-site/posts/howtoguide/) first before reading on.
 
+### Why Stable Diffusion?
+
+I chose stable diffusion because 
 
 ### 1.  Creating the prompt and generating images of presentation slides
 
@@ -162,6 +165,8 @@ I have already created all the slides in my powerpoint, so all I had to do was d
 ![](https://lh5.googleusercontent.com/Y7ao8Ee4MlnJcCY_oeAqV_FFxTTMW1gvEdDlsFf9_IsbrNGTRKuMdI5FdoiQ3qD6LMf5xg82Dqo6kFWqtuohQh_zFBNZQ8h2fNKs2xzzWZffYmQEj8e9cOSU8YnCm232KE2DUi_rIuv7-Yu8Z-7Ip1Q)
 
 
+## Interesting things I've found with this approach
+
 ## Disadvantages with the current approach
 
 1.  Fonts
@@ -214,7 +219,30 @@ My previous attempt at using chatGPT for a prompt:
 
 This approach could probably work with the right prompt, but in my experience, using the descriptions (see google doc above) that chatGPT gave didn’t really give me good results. This was using GPT-3. 
 
-  
+3. MidJourney
+
+MidJourney had amazing results even with simple prompts using only txt2img, however my free trial ended so I couldn't use MidJourney anymore but I wonder what could be done using MidJourney V5.
+
+**Example of MidJourney:**
+![](https://lh6.googleusercontent.com/nZ7bnUiGaoQARAZ4oU4qMZ2iBGdk88M_FVSXBtxlTAjCV04c7Nr1r1DIpCu9g73wvtsHCBrCfBoblG9OhfbPiI5s65VR7J_FoTDckYgGWtX-VzaeqquOpPh3WmM75bFujs0MXGgQasUggZpcB8z5cqo)![](https://lh6.googleusercontent.com/hT9fAF-p8-H3vahYql_8Hp8MvwL35EUO_LH9oZd-lxyYBtenL7xRyvqD7Rp1RgeJp8QL7n8ZMGlmYEBssZwoaDjAD1BPSqKcgt4NLRHZny120MybUCwif-vX9P2cOkh3JQBv7F9UJ6JSEcoWoACeLJY)
+
+Definitely not perfect, but had a lot of potential.
+
+4. img2img to generate the slides
+
+This was before ControlNet came out.
+
+This approach had the same idea as the ControlNet one where I used a input image to guide SD to rendering a ppt-ish slide. Example below
+```
+Prompt: title powerpoint slide, single page, black and white, mountains in the background, clear text, professional, sleek, sharp
+Negative prompt: multiple pages, people, faces, distorted text
+```
+Input image:
+![](https://lh5.googleusercontent.com/29FnOQKPmet9oWIgqL36HkQDk0OwIVqZFs8eDLbmTTHP_-wagD1SNu7HxYyR_97OulYTDBKGTQMAzVcaV_1BJIF-cWHWKOZQCJjXy59JnXqTg3aIDYxUO35u-JLwulQX3jQuznO7plYxbn5J2l8Ehxs)
+Output:
+![](https://lh3.googleusercontent.com/dqcaa6dz0UGihcqVMuihhDEXmneb2pGlsFyJY0ybZ0tJYThW9bho5tfKER-YdyvJOTEBE4F0B-SstAg5njmNahpfuAbt2DB91atj14hq-RSzQf2d0oTQovZb4RP-Bdgxs5VsmLTFYBjjFftpXwVK6RQ)
+
+The layout of the slides definitely were not as restricted as the current approach.
 
 ## Things I haven’t tried yet
 

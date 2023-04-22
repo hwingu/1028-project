@@ -326,7 +326,7 @@ As for the font, sometimes it generates a new font, sometimes it doesn’t on th
 
   
 
->There’s one way around this though which is inpaint. Just pick an image you rendered on step 1, keep settings all the same and using inpaint brush, cover the texts.
+>There’s one way around this though which is inpaint. Just pick an image you rendered on step 1, denoising strength should be at the lower end (0.5-0.6), keep every other setting the same and use inpaint brush to cover the texts. Rendering the image again should render an image with the new font.
 
   
 
@@ -336,6 +336,5 @@ If you lost your prompt and settings, there’s a tab called PNG info in A1111. 
 
 Once the new font is rendered, you could use [WhatTheFont](https://www.myfonts.com/pages/whatthefont) (An font identifying website)
 
-  
 
 This method is a bit of a gamble though since most of the fonts there are paid. Sometimes you can search for the font and a free version may come up if you’re lucky.
