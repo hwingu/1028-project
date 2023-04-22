@@ -262,7 +262,7 @@ Prompt: presentation slide template, <lora:last:1>, tree, leaves>
 
 While it definitely did render a more ppt-ish slide in the example above, I've tried many more tests but most of the slides doesn't really match the prompt or looks straight up broken.
 
-If you want to try out the lora, here's the [link](https://1drv.ms/u/s!App0pCtSTbcBgak1XhOgCLd5K4tkVA?e=Ko3baa)
+If you want to try out the lora, here's the [link to download](https://1drv.ms/u/s!App0pCtSTbcBgak1XhOgCLd5K4tkVA?e=Ko3baa).
 ## Things I haven’t tried yet
 
 1.   Supercharging the project using GPT-4 and maybe automating it
